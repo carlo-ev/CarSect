@@ -1,3 +1,4 @@
+require('coffee-script')
 var locomotive = require('locomotive')
   , bootable = require('bootable');
 
@@ -26,3 +27,5 @@ app.boot(function(err) {
     return process.exit(-1);
   }
 });
+
+
