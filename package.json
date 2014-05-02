@@ -9,7 +9,7 @@
     "express": "3.x.x",
     "connect-powered-by": "0.1.x",
     "ejs": "0.8.x",
-    "coffee-script": ""
+    "jade": ""
   },
   "scripts": {
     "start": "node server.js"

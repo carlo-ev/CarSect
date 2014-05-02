@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        link(rel="stylesheet", type="text/css", href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css')
+        link(rel="stylesheet", type="text/css", href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+        script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+    body
+        .container-fluid
+            block content
+            nav.navbar.navbar-default.navbar-fixed-bottom(role='navigation')
+                .container-fluid
+                    .navbar-header
+                        a.navbar-brand(href='#') CarSek
+                        p.navbar-text.navbar-right WebDevelopment by CMEV
+                    button.btn.btn-default.navbar-btn.navbar-right(type='button') Sign In

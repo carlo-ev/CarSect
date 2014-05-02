@@ -7,4 +7,8 @@
 // information.
 module.exports = function routes() {
   this.root('landing#front');
+  this.match('lost', 'landing#notfound');
+  this.match('login', 'session#new');
+  this.match('logout', 'session#destroy');
+  this.resources('session', { only : [ 'new', 'create', 'destroy'] } );
 }
