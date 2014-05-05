@@ -4,13 +4,12 @@ var locomotive = require('locomotive')
 var landingController = new Controller();
 
 landingController.front = function(){
-	this.title = "CarSek: Your Car in Reach, Always";
-	this.page = 'front';
+	this.title = "CarSect - Your Car in Reach, Always";
 	this.render();
 }
 
 landingController.notfound = function(){
-	this.title = "404 - Not Found";
+	this.title = "CarSect - 404 Not Found";
 	this.render();
 }
 

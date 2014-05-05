@@ -4,6 +4,8 @@ var locomotive = require('locomotive')
 var sessionController = new Controller();
 
 sessionController.new = function(){
+    this.title = "CarSect - Login";
+    this.render();
 }
 
 sessionController.destroy = function(){
