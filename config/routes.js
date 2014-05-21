@@ -15,4 +15,5 @@ module.exports = function routes() {
   this.resources('car');
   this.post('car/:id/open');
   this.post('car/:id/close');
+  this.get('phrases', 'phrases#index');
 }

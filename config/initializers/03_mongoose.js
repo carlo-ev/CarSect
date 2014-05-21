@@ -1,8 +1,12 @@
+var mongoose = require('mongoose');
+
 module.exports = function(){
-
-	this.mongoose = require('mongoose');
-	this.mongoose.connect(this.set('db-uri'));
-	this.mongooseTypes = require('mongoose-types');
-	this.mongooseTypes.loadTypes(this.mongoose);
-
+    switch(this.env){
+        case 'development':
+            mongoose.connect('mongodb://localhost/dev');
+            break;
+        case 'production':
+            mongoose.connect('');
+            break;
+    }   
 }
