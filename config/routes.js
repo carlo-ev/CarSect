@@ -7,11 +7,12 @@
 // information.
 module.exports = function routes() {
   this.root('landing#front');
-  this.get('dashboarb', 'user#dash');
+  this.get('dashboard', 'user#dash');
+  this.get('signup', 'user#signup');
+  this.post('signup', 'user#register');
   this.match('lost', 'landing#notfound');
   this.match('login', 'session#new');
   this.match('logout', 'session#destroy');
-  this.resources('session', { only : [ 'new', 'create', 'destroy'] } );
   this.resources('car');
   this.post('car/:id/open');
   this.post('car/:id/close');
