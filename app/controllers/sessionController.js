@@ -1,5 +1,5 @@
 var locomotive = require('locomotive')
-	,	Controller = locomotive.Controller;
+	,  Controller = locomotive.Controller;
 
 var sessionController = new Controller();
 
@@ -9,9 +9,13 @@ sessionController.new = function(){
 }
 
 sessionController.destroy = function(){
+  //delete user cookkie with passport blah blah 
+  this.redirect(rootPath);
 }
 
 sessionController.create = function(){
+  //loggin user blah blah with passport
+  this.redirect('/dashboard');
 }
 
 module.exports = sessionController;
