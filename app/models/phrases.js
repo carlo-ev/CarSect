@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+//var Schema = mongoose.Schema;
 
-var phrasesSchema = new Schema({
-	id : Schema.ObjectId,
+mongoose.connect('mongodb://localhost/dev');
+var Schema = mongoose.Schema;
+/*var phrasesSchema = new Schema({
+  id: Number,
 	title : String,
 	body : String
 });
-
-module.exports = mongoose.model('Phrases', phrasesSchema);
+*/
+module.exports = mongoose.model('Phrases', new Schema({title: String, body: String}));
