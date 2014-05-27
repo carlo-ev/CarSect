@@ -6,9 +6,8 @@ var locomotive = require('locomotive')
 var phrasesController = new Controller();
 
 phrasesController.index = function(){
-    var phrase = new hrases();
-    this.title = "CarSect  - DB Test";
-    console.log(this.params);
+    var phrases = new Phrases();
+    this.title = "CarSek  - DB Test";
     if(this.param['flag'] === 1){
         phrase.id = 1;
         phrase.title = "Test Phrase";
@@ -17,12 +16,12 @@ phrasesController.index = function(){
             if(err)
                 console.log(err);
         });
-        this.phrase = [];
+        this.phrases = [];
     }else{
         var self = this;
         phrase.find({}, function(err, ps){
             self.phrases = ps;
         });
     }
-    this.render();
+    this.render(this.phrases);
 }
