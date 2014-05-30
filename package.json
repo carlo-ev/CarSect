@@ -13,8 +13,7 @@
     "mongoose": "3.8.x",
     "mongoose-3x-types": "= 1.0.5",
     "locomotive-mongoose": ">= 0.1.0",
-    "bcrypt": ">= 0.5.x",
-    "coffee-script": ""
+    "bcrypt": ">= 0.5.x"
   },
   "scripts": {
     "start": "node server.js"

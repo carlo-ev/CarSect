@@ -1,5 +1,10 @@
 var mongoose = require('mongoose');
 
 module.exports = function(){
-            //mongoose.connect('mongodb://localhost/dev');
+	switch(env){
+		case 'development':
+			mongoose.connect('mongod://localhost/dev');
+		case 'production':
+			mongoose.connect('?');
+	}
 }

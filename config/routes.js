@@ -7,6 +7,7 @@
 // information.
 module.exports = function routes() {
   this.root('landing#front');
+  this.match('backend', 'landing#back');
   this.get('dashboard', 'user#dash');
   this.get('signup', 'user#signup');
   this.post('signup', 'user#register');
@@ -16,5 +17,4 @@ module.exports = function routes() {
   this.resources('car');
   this.post('car/:id/open');
   this.post('car/:id/close');
-  this.get('phrases', 'phrases#index');
 }
