@@ -1,10 +1,13 @@
 var mongoose = require('mongoose');
 
 module.exports = function(){
-	switch(env){
+  mongoose.connect('mongodb://localhost:27017/dev');
+  mongooseTypes = require('mongoose-3x-types');
+  mongooseTypes.loadTypes(mongoose);
+  /*switch(this.env){
 		case 'development':
-			mongoose.connect('mongod://localhost/dev');
+			mongoose.connect('mongodb://localhost/dev');
 		case 'production':
 			mongoose.connect('?');
-	}
+	}*/
 }
