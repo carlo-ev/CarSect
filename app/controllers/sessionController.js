@@ -9,12 +9,15 @@ sessionController.new = function(){
 }
 
 sessionController.destroy = function(){
-  //delete user cookkie with passport blah blah 
+  this.req.logout();
   this.redirect(rootPath);
 }
 
 sessionController.create = function(){
-  //loggin user blah blah with passport
+  passport.authenticate('local', {
+	successRedirect: this.redirect('/dashboard'),
+	failureRedirect: this.redirect('/login')
+  })(this.__req, this.__res, this.__next);
   this.redirect('/dashboard');
 }
 

@@ -2,7 +2,7 @@ var locomotive = require('locomotive')
     ,  Controller = locomotive.Controller
     , passport = require('passport');
 
-var User = require('../model/user');
+var User = require('../models/user');
 
 var userController= new Controller();
 
@@ -17,18 +17,22 @@ userController.signup = function(){
 }
 
 userController.register = function(){
+  console.log("Register");
+  console.log(this.param('first.name'));
   var user = new User();
-  account.email = this.param('email');
-  account.password = this.param('password');
-  account.name.first = this.param('name.first');
-  account.name.last = this.param('name.last');
+  user.email = this.param('email');
+  user.password = this.param('password');
+  user.name.first = this.param('name.first');
+  user.name.last = this.param('name.last');
   
   var self = this;
-  account.save(function(err){
-    
+  user.save(function(err){
+	console.log(err);
+  	if(err)
+	  return self.redirect(self.urlFor({action: 'signup'}));
+
+	return self.redirect('/login'); 
   });
-  //save on db and make session blah blah
-  this.redirect("/dashboard");
 }
 
 module.exports = userController;
