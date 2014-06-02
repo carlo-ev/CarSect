@@ -1,1 +1,1 @@
-web: lcm server
+web: NODE_ENV=production lcm server
