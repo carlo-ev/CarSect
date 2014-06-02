@@ -2,6 +2,12 @@
   "name": "CarSek.io",
   "version": "0.0.1",
   "private": true,
+  "description": "Proyecto Final Clase Rede I Periodo 2/2014 Grupo#4 UNITEC",
+  "author": "Carlo Espinal - carlo-ev",
+  "repository":{
+    "type": "git",
+    "url": "git@github.com:carlo-ev/CarSek.io.git"
+  },
   "dependencies": {
     "locomotive": "0.4.x",
     "bootable": "0.2.x",
@@ -18,7 +24,10 @@
     "passport-local": ">= 0.1.0",
     "session-mongoose": "0.0.2"
   },
+  "engines":{
+    "node": "0.10.x"
+    },
   "scripts": {
-    "start": "node server.js"
+    "start": "lcm server"
   }
 }
