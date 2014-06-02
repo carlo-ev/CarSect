@@ -7,8 +7,6 @@
 // information.
 module.exports = function routes() {
   this.root('landing#front');
-  this.match('test', 'session#test');
-  this.match('ExTest', 'landing#exRequest');
   this.get('dashboard', 'user#dash');
   this.get('devices', function(req, res, next){ res.redirect('/dashboard')});
   this.get('devices/new', 'device#new');

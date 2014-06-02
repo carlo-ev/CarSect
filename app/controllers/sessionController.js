@@ -23,9 +23,4 @@ sessionController.create = function(){
 	
 }
 
-sessionController.test = function(){
-	this.render();
-}
-
-
 module.exports = sessionController;
