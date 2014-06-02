@@ -12,7 +12,7 @@ block content
         br
         br
         .col-md-8.col-md-offset-2
-            - if(devices.lentgh > 0){
+            - if(devices.length > 0){
                 ul.list-group
                     - for(var i=0;i<devices.length;i++){
                         li.list-group-item
@@ -20,6 +20,12 @@ block content
                                 button.btn.btn-info(type="button") Manage
                             h4= devices[i].title
                     - }
+            -}else if(devices.title){
+                ul.list-group
+                    li.list-group-item
+                        a(href="/devices/#{devices.key}").pull-right
+                                button.btn.btn-info(type="button") Manage
+                        h4= devices.title
             - }else{
                 .well
                     h4.text-center Click New Device to Register your first device!
