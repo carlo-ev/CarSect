@@ -3,12 +3,22 @@ var locomotive = require('locomotive')
     , passport = require('passport');
 
 var User = require('../models/user');
+var Device = require('../models/device');
 
 var userController= new Controller();
 
 userController.dash = function(){
+    //console.log(this.req.isAuthenticated());
+    //if(!this.req.isAuthenticated())
+    // return this.res.redirect('/login');
+
     this.title = 'CarSek - Dashboard';
-    this.render();
+    this.user = this.req.user;
+    var self = this;
+    Device.find(function(err, devices){
+      self.devices = devices;
+      self.render();
+    });
 }
 
 userController.signup = function(){
@@ -17,8 +27,6 @@ userController.signup = function(){
 }
 
 userController.register = function(){
-  console.log("Register");
-  console.log(this.param('first.name'));
   var user = new User();
   user.email = this.param('email');
   user.password = this.param('password');
@@ -27,11 +35,10 @@ userController.register = function(){
   
   var self = this;
   user.save(function(err){
-	console.log(err);
-  	if(err)
-	  return self.redirect(self.urlFor({action: 'signup'}));
+    if(err)
+      return self.redirect(self.urlFor({action: 'signup'}));
 
-	return self.redirect('/login'); 
+    return self.redirect('/login'); 
   });
 }
 

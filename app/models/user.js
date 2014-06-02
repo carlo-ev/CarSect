@@ -17,9 +17,10 @@ var UserSchema = new Schema({
 UserSchema.virtual('password').get(function(){
   return this._password;  
 }).set(function(password){
+  this._password = password;
   var salt = this.salt = bcrypt.genSaltSync(10);
   this.hash = bcrypt.hashSync(password, salt);
-})
+});
 
 UserSchema.method('checkPassword', function(password, callback){
   bcrypt.compare(password, this.hash, callback);
@@ -30,10 +31,12 @@ UserSchema.static('authenticate', function(email, password, callback){
     if(err)
         return callback(err);
     if(!user)
-        return callback(null. false);
+        return callback(null, false);
+      
     user.checkPassword(password, function(err, passwordCorrect){
       if(err)
           return callback(err);
+
       if(!passwordCorrect)
           return callback(null, false);
       

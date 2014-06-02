@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    .row
+        .col-md-10.col-md-offset-1
+            .page-header
+                h3 Manage Device -
+                    span= "    "+device.title
+    .row
+        .col-md-4.col-md-offset-4
+            br
+            -if(resp){
+                -if(resp==1)
+                    .alert.alert-info Your Device is now Open!
+                -else
+                    .alert.alert-info Your Device is now Closed!
+            -}
+            br
+            .well
+                a(href="/devices/"+device.key+"?to=1")
+                    button.btn.btn-success.btn-lg.btn-block(type="button") Open
+                br
+                a(href="/devices/"+device.key+"?to=0")
+                    button.btn.btn-danger.btn-lg.btn-block(type="button") Close
+            a(href="/dashboard")
+                button.btn.btn-default.pull-left Back

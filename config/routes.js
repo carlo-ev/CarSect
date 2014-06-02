@@ -7,14 +7,17 @@
 // information.
 module.exports = function routes() {
   this.root('landing#front');
-  this.match('backend', 'landing#back');
+  this.match('test', 'session#test');
+  this.match('ExTest', 'landing#exRequest');
   this.get('dashboard', 'user#dash');
+  this.get('devices', function(req, res, next){ res.redirect('/dashboard')});
+  this.get('devices/new', 'device#new');
+  this.get('devices/:key', 'device#show');
+  this.post('devices', 'device#create');
   this.get('signup', 'user#signup');
   this.post('signup', 'user#register');
-  this.match('lost', 'landing#notfound');
-  this.match('login', 'session#new');
+  this.get('login', 'session#new');
+  this.post('login', 'session#create');
   this.match('logout', 'session#destroy');
-  this.resources('car');
-  this.post('car/:id/open');
-  this.post('car/:id/close');
+  this.match('*a', 'landing#notfound');
 }

@@ -1,5 +1,6 @@
 var locomotive = require('locomotive')
-	,  Controller = locomotive.Controller;
+	,  Controller = locomotive.Controller
+	,  passport = require('passport');
 
 var sessionController = new Controller();
 
@@ -14,11 +15,17 @@ sessionController.destroy = function(){
 }
 
 sessionController.create = function(){
-  passport.authenticate('local', {
-	successRedirect: this.redirect('/dashboard'),
-	failureRedirect: this.redirect('/login')
-  })(this.__req, this.__res, this.__next);
-  this.redirect('/dashboard');
+  passport.authenticate('local');
+  console.log(this.req.isAuthenticated());
+  if(!this.req.isAuthenticated())
+	return this.res.redirect('/login');
+  return this.res.redirect('/dashboard');
+	
 }
+
+sessionController.test = function(){
+	this.render();
+}
+
 
 module.exports = sessionController;
