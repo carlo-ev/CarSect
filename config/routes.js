@@ -17,5 +17,6 @@ module.exports = function routes() {
   this.get('login', 'session#new');
   this.post('login', 'session#create');
   this.match('logout', 'session#destroy');
+  this.match('external', 'landing#external');
   this.match('*a', 'landing#notfound');
 }
