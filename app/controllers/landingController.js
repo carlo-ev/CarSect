@@ -24,7 +24,7 @@ landingController.external = function(){
   http.get(reqOptions, function(resp){
       resp.setEncoding('utf8');
       resp.on('data', function(chunks){
-        self.resp.write(chunks);
+        self.res.write(chunks);
       });
   });
 }
