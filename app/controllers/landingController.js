@@ -22,7 +22,7 @@ landingController.external = function(){
     path: self.param('path')
   };
   http.get(reqOptions, function(resp){
-      resp.setEnconding('utf8');
+      resp.setEncoding('utf8');
       resp.on('data', function(chunks){
         self.resp.write(chunks);
       });
