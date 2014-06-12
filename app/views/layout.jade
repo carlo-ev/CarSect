@@ -8,10 +8,11 @@ html
     body
         .container-fluid
             block content
-            nav.navbar.navbar-inverse.navbar-fixed-bottom(role='navigation')
+            nav.navbar.navbar-fixed-bottom(role='navigation', style="box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.4);")
                 .container-fluid
                     .navbar-header
-                        a.navbar-brand(href='/') CarSek
+                        a.navbar-brand(href='/')
+                            img.img-rounded(src="/images/casek.png", style="width:30%;height:100%;")
                         p.navbar-text.navbar-right WebDevelopment by CMEV
                     a(href="/devices")
                         button.btn.btn-info.navbar-btn.navbar-right(type='button') Devices
