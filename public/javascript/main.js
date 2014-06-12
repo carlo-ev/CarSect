@@ -6,14 +6,12 @@ $(document).ready(function(){
             type: "GET",
             crossDomain: true,
             dataType: "JSONP"
-        }).done(function(resp){
-            console.log(resp);
-            $(".alert.alert-info").text("We have open your device!");
-            $(".alert.alert-info").show();        
-            setTimeout(function(){
-                $(".alert.alert-info").hide();            
-            }, 2000);
         });
+        $(".alert.alert-info").text("We are now opening your device!");
+        $(".alert.alert-info").show(1000);        
+        setTimeout(function(){
+            $(".alert.alert-info").hide(2500);            
+        }, 3000);
     });
 
     $("button.btn.btn-danger.btn-lg.btn-block").click(function(){
@@ -22,14 +20,12 @@ $(document).ready(function(){
             type: "GET",
             crossDomain: true,
             dataType: "JSONP"
-        }).done(function(resp){
-            console.log(resp);
-            $(".alert.alert-info").text("We have open your device!");
-            $(".alert.alert-info").show();        
-            setTimeout(function(){
-                $(".alert.alert-info").hide();            
-            }, 2000);
         });
+        $(".alert.alert-info").text("We are now closing your device!");
+        $(".alert.alert-info").show(1000);        
+        setTimeout(function(){
+            $(".alert.alert-info").hide(2500);            
+        }, 3000);
     });
 
 });
