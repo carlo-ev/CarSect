@@ -8,10 +8,12 @@ $(document).ready(function(){
             dataType: "JSONP"
         });
         $(".alert.alert-info").text("We are now opening your device!");
-        $(".alert.alert-info").show(1000);        
         setTimeout(function(){
-            $(".alert.alert-info").hide(2500);            
-        }, 3000);
+            $(".alert.alert-info").show(1000);   
+        }, 20000);     
+        setTimeout(function(){
+            $(".alert.alert-info").hide(1000);            
+        }, 25000);
     });
 
     $("button.btn.btn-danger.btn-lg.btn-block").click(function(){
@@ -22,10 +24,12 @@ $(document).ready(function(){
             dataType: "JSONP"
         });
         $(".alert.alert-info").text("We are now closing your device!");
-        $(".alert.alert-info").show(1000);        
         setTimeout(function(){
-            $(".alert.alert-info").hide(2500);            
-        }, 3000);
+            $(".alert.alert-info").show(1000);   
+        }, 20000);     
+        setTimeout(function(){
+            $(".alert.alert-info").hide(1000);            
+        }, 25000);
     });
 
 });
