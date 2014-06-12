@@ -10,7 +10,7 @@ $(document).ready(function(){
         $(".alert.alert-info").text("We are now opening your device!");
         setTimeout(function(){
             $(".alert.alert-info").show(1000);   
-        }, 20000);     
+        }, 15000);     
         setTimeout(function(){
             $(".alert.alert-info").hide(1000);            
         }, 25000);
@@ -26,7 +26,7 @@ $(document).ready(function(){
         $(".alert.alert-info").text("We are now closing your device!");
         setTimeout(function(){
             $(".alert.alert-info").show(1000);   
-        }, 20000);     
+        }, 15000);     
         setTimeout(function(){
             $(".alert.alert-info").hide(1000);            
         }, 25000);
