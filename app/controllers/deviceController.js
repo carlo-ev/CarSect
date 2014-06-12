@@ -11,26 +11,8 @@ deviceController.new = function(){
     this.render();
 }
 
-var extRequest = function(state, context){
-    var reqOptions = {
-        host: '198.199.114.228',
-        port: 8080,
-        path: '/devices?key=0DA79230&to='+state
-    };
-    http.get(reqOptions, function(resp){
-        resp.setEncoding('utf8');
-        resp.on('data', function(chunk){
-            console.log(chunk);
-        });
-    });
-}
-
 deviceController.show = function(){
     this.title = 'Carsek - Device Control Center';
-    if(this.param('to')){
-        extRequest(this.param('to'), this);
-        this.resp = this.param('to');
-    }
     
     var self = this;
     Device.find({key: this.param('key')}, function(err, device){

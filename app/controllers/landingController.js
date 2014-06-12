@@ -14,19 +14,4 @@ landingController.notfound = function(){
 	this.render();
 }
 
-landingController.external = function(){
-  var self = this;
-  var reqOptions = {
-    host: self.param('host'),
-    port: 80,
-    path: self.param('path')
-  };
-  http.get(reqOptions, function(resp){
-      resp.setEncoding('utf8');
-      resp.on('data', function(chunks){
-        self.res.write(chunks);
-      });
-  });
-}
-
 module.exports = landingController;
